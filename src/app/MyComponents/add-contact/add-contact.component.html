@@ -1,0 +1,16 @@
+<div class="container">
+
+    <form #f="ngForm" (ngSubmit)="onFormSubmit(f)">
+        <div class="mb-3">
+            <label for="Name" class="form-label">Name</label>
+            <input type="text" class="form-control" ngModel id="name" name='name' aria-describedby="name" style="width: 30%;">
+            
+        </div>
+        <div class="mb-3">
+            <label for="cnumber" class="form-label">Number</label>
+            <input type="text" ngModel class="form-control" id="cnumber" name="cnumber" aria-describedby="cnumber" style="width: 30%;">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

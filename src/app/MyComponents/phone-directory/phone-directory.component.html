@@ -1,0 +1,25 @@
+<div class="container p-4">
+  <h3>Add Contact</h3>
+  <app-add-contact (addContact)="addContact($event)"></app-add-contact>
+</div>
+<div class="blockquote-footer container p-4" *ngIf="directory.length==0; else elseBlock">No Contacts</div>
+<ng-template #elseBlock>
+<div class="container">
+  <div class="row p-5">
+    <div class="col">
+      <h5>Name</h5>
+    </div>
+    <div class="col">
+      <h5>Number</h5>
+    </div>
+    <div class="col">
+      <h5>Action</h5>
+    </div>
+  </div>
+  <div>
+    <div *ngFor="let Directory of directory">
+      <app-view-contact [dir]="Directory" (dirDelete)="deleteDirectory($event)"></app-view-contact>
+    </div>
+  </div>
+</div>
+</ng-template>
